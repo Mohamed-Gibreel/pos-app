@@ -1,7 +1,10 @@
+import 'package:base_template/common/widgets/button.dart';
 import 'package:base_template/counter/counter.dart';
 import 'package:base_template/l10n/l10n.dart';
+import 'package:base_template/utils/styles/flutter_extenstions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
@@ -28,6 +31,17 @@ class CounterView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+          CustomButton(
+            variant: CustomButtonVariant.primary,
+            size: CustomButtonSize.s,
+            onTap: () {},
+            textColor: Colors.red,
+            prefix: SvgPicture.asset(
+              'assets/icons/Plus.svg',
+              color: Colors.white,
+            ),
+            child: 'Add Product',
+          ),
           FloatingActionButton(
             onPressed: () => context.read<CounterCubit>().increment(),
             child: const Icon(Icons.add),
