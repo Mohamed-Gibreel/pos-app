@@ -52,6 +52,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     required this.warningGradientTo,
     required this.errorGradientFrom,
     required this.errorGradientTo,
+    required this.outlineGradientFrom,
+    required this.outlineGradientTo,
     // Error
     required this.error100,
     required this.error200,
@@ -104,6 +106,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color warningGradientTo;
   final Color errorGradientFrom;
   final Color errorGradientTo;
+  final Color outlineGradientFrom;
+  final Color outlineGradientTo;
 
   final Color error100;
   final Color error200;
@@ -155,6 +159,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? warningGradientTo,
     Color? errorGradientFrom,
     Color? errorGradientTo,
+    Color? outlineGradientFrom,
+    Color? outlineGradientTo,
     Color? error100,
     Color? error200,
     Color? error300,
@@ -204,6 +210,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       warningGradientTo: warningGradientTo ?? this.warningGradientTo,
       errorGradientFrom: errorGradientFrom ?? this.errorGradientFrom,
       errorGradientTo: errorGradientTo ?? this.errorGradientTo,
+      outlineGradientFrom: outlineGradientFrom ?? this.outlineGradientFrom,
+      outlineGradientTo: outlineGradientTo ?? this.outlineGradientTo,
 
       error100: error100 ?? this.error100,
       error200: error200 ?? this.error200,
@@ -300,6 +308,17 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
         t,
       )!,
       errorGradientTo: Color.lerp(errorGradientTo, other.errorGradientTo, t)!,
+
+      outlineGradientFrom: Color.lerp(
+        outlineGradientFrom,
+        other.outlineGradientFrom,
+        t,
+      )!,
+      outlineGradientTo: Color.lerp(
+        outlineGradientTo,
+        other.outlineGradientTo,
+        t,
+      )!,
 
       error100: Color.lerp(error100, other.error100, t)!,
       error200: Color.lerp(error200, other.error200, t)!,
