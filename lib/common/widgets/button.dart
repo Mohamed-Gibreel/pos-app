@@ -27,6 +27,13 @@ class CustomButton extends StatelessWidget {
   final Widget? postfix;
   final Color? textColor;
 
+  bool isSameVariant(
+    CustomButtonVariant firstVariant,
+    CustomButtonVariant secondVariant,
+  ) {
+    return firstVariant == secondVariant;
+  }
+
   @override
   Widget build(BuildContext context) {
     final horizontalPadding = {
@@ -102,10 +109,10 @@ class CustomButton extends StatelessWidget {
       curve: Curves.easeInOut,
       decoration: BoxDecoration(
         borderRadius: borderRadius ?? BorderRadius.circular(12),
-        gradient: variant == CustomButtonVariant.outline
+        gradient: isSameVariant(variant, CustomButtonVariant.outline)
             ? null
             : color[variant],
-        border: variant == CustomButtonVariant.outline
+        border: isSameVariant(variant, CustomButtonVariant.outline)
             ? GradientBoxBorder(
                 gradient: color[variant]!,
               )
